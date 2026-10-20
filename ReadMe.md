@@ -33,17 +33,25 @@ Since compiled files (like the `target/` folder and `.jar` binaries) are exclude
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/YOUR_USERNAME/nka-palyazatfigyelo.git](https://github.com/YOUR_USERNAME/nka-palyazatfigyelo.git)
+   git clone https://github.com/YOUR_USERNAME/nka-palyazatfigyelo.git
    cd nka-palyazatfigyelo
 
+2. Package the application using Maven:
 mvn clean package
 
-mkdir -p ~/palyazatfigyelo
-cp target/nka-palyazatfigyelo-1.0-SNAPSHOT.jar ~/palyazatfigyelo/
+This will generate the executable nka-palyazatfigyelo-1.0-SNAPSHOT.jar inside the target/ directory.
 
-[Unit]
-Description=NKA Palyazatfigyelo
-After=network.target
+Running & Deployment (Linux systemd)
+
+To run the application as a permanent background service on Linux:
+
+1. Create a deployment directory and copy the built .jar file:
+    mkdir -p ~/palyazatfigyelo
+    cp target/nka-palyazatfigyelo-1.0-SNAPSHOT.jar ~/palyazatfigyelo/
+2. Create a systemd service file (/etc/systemd/system/palyazatfigyelo.service):
+   [Unit]
+   Description=NKA Palyazatfigyelo
+   After=network.target
 
 [Service]
 User=your_username
@@ -58,7 +66,9 @@ Environment="NOTIFY_EMAIL=your_email@gmail.com"
 [Install]
 WantedBy=multi-user.target
 
-sudo systemctl daemon-reload
-sudo systemctl enable palyazatfigyelo
-sudo systemctl start palyazatfigyelo
-sudo systemctl status palyazatfigyelo
+
+3. Enable and start the service:
+   sudo systemctl daemon-reload
+   sudo systemctl enable palyazatfigyelo
+   sudo systemctl start palyazatfigyelo
+   sudo systemctl status palyazatfigyelo
