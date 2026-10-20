@@ -37,7 +37,7 @@ Since compiled files (like the target folder and jar binaries) are excluded from
 
 ## Running & Deployment (Linux systemd)
 
-To run the application as a permanent background service on Linux:
+To run the application as a permanent background service on Linux: 
 
 1. Create a deployment directory (~/palyazatfigyelo) and copy the built jar file there.
 2. Create a systemd service file at /etc/systemd/system/palyazatfigyelo.service containing your user configuration, WorkingDirectory, ExecStart pointing to the jar, and the Environment variables for MAIL_USERNAME, MAIL_PASSWORD, and NOTIFY_EMAIL.
