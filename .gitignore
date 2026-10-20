@@ -1,0 +1,38 @@
+# === BUILD & TARGET ===
+/target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+*.jar
+*.war
+*.ear
+
+# === IDE (IntelliJ, Eclipse, VS Code) ===
+.idea/
+*.iml
+*.iws
+*.ipr
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+.vscode/
+
+# === DATABASE ===
+/data/
+*.db
+*.mv.db
+*.trace.db
+
+# === LOGS & OS FILES ===
+logs/
+*.log
+.DS_Store
+Thumbs.db
+*~
+*.swp
+
+# === KOTLIN & OTHERS ===
+.kotlin
