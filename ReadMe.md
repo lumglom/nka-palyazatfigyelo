@@ -68,7 +68,7 @@ WantedBy=multi-user.target
 
 
 3. Enable and start the service:
-   sudo systemctl daemon-reload
-   sudo systemctl enable palyazatfigyelo
-   sudo systemctl start palyazatfigyelo
-   sudo systemctl status palyazatfigyelo
+sudo systemctl daemon-reload
+sudo systemctl enable palyazatfigyelo
+sudo systemctl start palyazatfigyelo
+sudo systemctl status palyazatfigyelo
