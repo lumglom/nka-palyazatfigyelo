@@ -33,7 +33,7 @@ Since compiled files (like the target folder and jar binaries) are excluded from
 
 1. Clone the repository and navigate into the project directory.
 2. Package the application using Maven with the following command: mvn clean package
-   This will generate the executable jar file inside the target directory.
+   This will generate the executable jar file inside the target directory. 
 
 ## Running & Deployment (Linux systemd)
 
